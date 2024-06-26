@@ -1,0 +1,15 @@
+body{
+  margin: unset;
+  background-color: #F3F7EC;
+}
+.testing{
+  display: flex;
+  flex-direction: row;
+}
+a{
+  color: unset;
+  text-decoration: none;
+}
+#root{
+  /* color:#E88D67; */
+}

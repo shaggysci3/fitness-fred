@@ -1,0 +1,38 @@
+.startButton{
+    background-color: #006989;
+    padding: 15px;
+    border-radius: 40px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.startButton:hover{
+    background-color: #005C78;
+    cursor: pointer;
+}
+.backgroundImg{
+    filter: blur(4px);
+    position: fixed;
+    max-block-size: 1920px;
+    z-index: -1;
+}
+.homePage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttonContainer{
+    display: flex;
+}
+.exerciseOTD{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.exercises{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
