@@ -41,7 +41,7 @@ const Exercises = () => {
       <div className="exercises">
         
         <div className="testing">
-          <button onClick={handleShow} >Add</button>
+          <button onClick={handleShow} >Add Workout</button>
           <button onClick={() => executeScroll(backRef)}>Back</button>
           <button onClick={() => executeScroll(kneeRef)}>Knee</button>
           <button onClick={() => executeScroll(elbowRef)}>Elbow</button>
