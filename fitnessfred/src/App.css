@@ -34,3 +34,24 @@ a{
 html {
   scroll-behavior: smooth;
 }
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white ;
+}
+.smallImg{
+  width: 150px;
+}
+.smallImg:hover{
+  box-shadow: 2px 2px 2px 1px #000;
+
+}
+.smallImg:active{
+  scale: 90%;
+}
+.smallImgSelect{
+  width: 150px;
+  scale: 95%;
+  box-shadow: 2px 2px 2px 1px #000;
+}

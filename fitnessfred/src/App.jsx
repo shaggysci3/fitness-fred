@@ -17,6 +17,7 @@ import Exercises from "./routes/Exercises";
 import ExerciseOTD from "./routes/ExerciseOTD";
 import { useEffect } from "react"
 import Login from "./routes/login";
+import Footer from "./components/Footer";
 
 
 
@@ -36,6 +37,7 @@ const App = () =>{
     <div className="siteContainer">
       <Navbar/>
       <Outlet context={[userData,setUserData]}/>
+      <Footer/>
       
     </div>
     </>
