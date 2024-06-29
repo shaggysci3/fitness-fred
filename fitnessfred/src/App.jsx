@@ -16,17 +16,18 @@ import Navbar from "./components/Navbar";
 import Exercises from "./routes/Exercises";
 import ExerciseOTD from "./routes/ExerciseOTD";
 import { useEffect } from "react"
+import Login from "./routes/login";
 
 
 
 
 
 const App = () =>{
-  const[exercises,setExercises]=useState([])
+  const[userData,setUserData]=useState([])
   
-  useEffect(() => {
-    sessionStorage.setItem('token', JSON.stringify(exercises))
-  }, []); 
+  // useEffect(() => {
+  //   sessionStorage.setItem('token', JSON.stringify(exercises))
+  // }, []); 
   
   
  
@@ -34,7 +35,7 @@ const App = () =>{
     <>
     <div className="siteContainer">
       <Navbar/>
-      <Outlet context={[exercises,setExercises]}/>
+      <Outlet context={[userData,setUserData]}/>
       
     </div>
     </>
@@ -59,7 +60,10 @@ const router = createBrowserRouter([
       },{
         path: "/ExerciseDaily",
         element: <ExerciseOTD/>
-      },
+      },{
+        path:"/login",
+        element:<Login/>
+      }
       
       
     ]

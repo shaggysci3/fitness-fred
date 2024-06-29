@@ -31,3 +31,6 @@ a{
 .ProductImg-S{
   max-block-size: 9rem;
 }
+html {
+  scroll-behavior: smooth;
+}

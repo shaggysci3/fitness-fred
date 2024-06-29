@@ -23,7 +23,7 @@ const Navbar = () =>{
             </Link>
         </div>
         <div>
-            <Link to={"/"}>
+            <Link to={"/login"}>
             <img className="logo" src="https://th.bing.com/th/id/OIG4.S2S0EibF032SOJWNANbD?pid=ImgGn"></img>
             </Link>
         </div>
