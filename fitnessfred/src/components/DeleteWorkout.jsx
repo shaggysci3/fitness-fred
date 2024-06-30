@@ -22,7 +22,7 @@ const DeleteWorkout = () => {
     e.preventDefault();
     
         //if User exists, make a delete request
-        deleteUser();
+        
         
      
       
@@ -36,9 +36,9 @@ const DeleteWorkout = () => {
   }
 
   // delete user function
-  async function deleteUser(userId) {
+  async function deleteUser(workoutId) {
     try {
-      const response = await fetch(`http://127.0.0.1:5555/users/${userId}`, {
+      const response = await fetch(`https://birds-ub6e.onrender.com/workouts/${workoutId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -46,9 +46,10 @@ const DeleteWorkout = () => {
       });
 
       if (response.ok) {
-        console.log(`User with ID ${userId} deleted successfully`);
+        console.log(`User with ID ${workoutId} deleted successfully`);
+        setDeleteId(null)
       } else {
-        console.error(`Failed to delete user with ID ${userId}`);
+        console.error(`Failed to delete user with ID ${workoutId}`);
       }
     } catch (error) {
       console.error('Error deleting user:', error);
@@ -61,13 +62,26 @@ const DeleteWorkout = () => {
     };
     
     useEffect(() => {
+        console.log("deleteid has been called in the use effect")
         const fetchProducts = async () => {
             const response = await fetch("https://birds-ub6e.onrender.com/workouts");
             const WorkoutArr = await response.json();
             setAllWorkouts(WorkoutArr);
         };
         fetchProducts().catch(console.error);
-    }, []);
+        
+    }, [deleteId]);
+
+    useEffect(() => {
+        console.log("deleteid has been called in the use effect")
+        const fetchProducts = async () => {
+            const response = await fetch("https://birds-ub6e.onrender.com/workouts");
+            const WorkoutArr = await response.json();
+            setAllWorkouts(WorkoutArr);
+        };
+        fetchProducts().catch(console.error);
+        
+    }, [showForm]);
     
     
     function handleId(id){
@@ -80,6 +94,10 @@ const DeleteWorkout = () => {
           return <img className={deleteId==workout.id?'smallImgSelect':'smallImg'} src={workout.img} key={workout.id} onClick={()=>handleId(workout.id)}/>
         })
     }
+    function handleDelete(){
+        deleteUser(deleteId);
+        
+    }
     
 
 
@@ -90,6 +108,7 @@ const DeleteWorkout = () => {
         <>
         <div>
            {workout}
+           <button onClick={handleDelete}>delete</button>
         </div>
       
       </>
