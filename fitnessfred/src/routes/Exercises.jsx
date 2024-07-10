@@ -3,6 +3,7 @@ import { Link, useOutletContext } from "react-router-dom";
 import AddWorkout from "../components/AddWorkout";
 import YourWorkouts from "../components/YourWorkouts";
 import DeleteWorkout from "../components/DeleteWorkout";
+import AddToUser from "../components/AddToUser";
 
 const Exercises = () => {
   const[show,setshow]=useState(false)
@@ -53,6 +54,7 @@ const Exercises = () => {
           <h1>Welcome admin</h1>
             <button onClick={handleShow} >Add Workout</button>
         <DeleteWorkout/>
+        <AddToUser/>
         {show?(<>
         <AddWorkout></AddWorkout>
         </>):(<></>)}
