@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { useOutletContext } from "react-router-dom"
+import { Link, useOutletContext } from "react-router-dom"
 
-const YourWorkouts = ({name,img,timer}) =>{
+const YourWorkouts = ({name,img,timer,id}) =>{
   const[userData,setUserData]=useOutletContext()
   
     
@@ -12,14 +12,19 @@ const YourWorkouts = ({name,img,timer}) =>{
     // }, []);
     console.log(userData.workouts)
  
-   
+    function handleClick(){
+      console.log(`this workout id is : ${id}`)
+      
+    }
 
     return(
       <>
       <div>
         
         <h1> {name} </h1>
-        <img src={img}></img>
+        <Link to={`/Exercises/${id}`}>
+        <img onClick={handleClick} src={img}></img>
+        </Link>
         
       </div>
       

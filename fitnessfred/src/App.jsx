@@ -18,6 +18,7 @@ import ExerciseOTD from "./routes/ExerciseOTD";
 import { useEffect } from "react"
 import Login from "./routes/login";
 import Footer from "./components/Footer";
+import ExercisePage from "./routes/ExercisePage";
 
 
 
@@ -65,8 +66,10 @@ const router = createBrowserRouter([
       },{
         path:"/login",
         element:<Login/>
+      },{
+        path:"/Exercises/:id",
+        element:<ExercisePage/>
       }
-      
       
     ]
   }

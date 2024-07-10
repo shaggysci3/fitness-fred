@@ -43,6 +43,12 @@ const Exercises = () => {
     })
  
   }
+  let workouts;
+  if(allWorkouts){
+    workouts = allWorkouts.map((workout,index)=>{
+      return <YourWorkouts key={index} name={workout.name} id={workout.id} img={workout.img} timer={workout.timer}/>
+    })
+  }
 
   return (
     <>
@@ -72,6 +78,7 @@ const Exercises = () => {
           <a href="#back">Back</a>
           <a href="#knee">knee</a>
           <a href="#elbow">Elbow</a>
+          {workouts}
           
         </div>
         <h3 id="back" >Back</h3>
