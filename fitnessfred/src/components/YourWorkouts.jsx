@@ -13,22 +13,28 @@ const YourWorkouts = ({name,img,timer,id}) =>{
     console.log(userData.workouts)
  
     function handleClick(){
-      console.log(`this workout id is : ${id}`)
+      // console.log(`this workout id is : ${id}`)
       
     }
 
     return(
       <>
-      <div>
+        <Link to={`/Exercises/${id}`}>
+      <div className="workoutContainer">
         
         <h1> {name} </h1>
-        <Link to={`/Exercises/${id}`}>
-        <img onClick={handleClick} src={img}></img>
-        </Link>
+        <img className="workoutImg" onClick={handleClick} src={img}></img>
+        <div className="moreInfo">
+          
+          <h1>info</h1>
+          <h2>Timer: {timer==0?"none":"10 seconds"}</h2>
+
+        </div>
         
       </div>
       
         
+        </Link>
       </>
     )
   }

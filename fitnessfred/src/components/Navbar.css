@@ -14,10 +14,14 @@
     padding-bottom: 3px;
     text-decoration: none;
     border-bottom: 2px solid rgba(0,0,0,0);
+    transition: 200ms;
+    padding: 5px;
+    padding-inline: 10px;
     /* border-bottom: 2px solid rgba(0,0,0,0.0); */
     
 }
 .navbarItem:hover{
+    transition: 200ms;
     cursor: pointer;
     color: #E88D67;
     border-bottom: 2px solid ;
